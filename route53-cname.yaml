@@ -7,11 +7,11 @@
     - name: Create or update CNAME entry
       community.aws.route53:
         state: present
-        zone: mouimetlab.com
-        record: global-app1.mouimetlab.com
+        zone: "{{ zone_name }}"
+        record: "{{ global_name }}"
         type: CNAME
         ttl: 300
         value: "{{ target_names }}"
         wait: yes
         overwrite: yes
-        
+
