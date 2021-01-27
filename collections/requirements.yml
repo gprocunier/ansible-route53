@@ -1,1 +1,3 @@
-community.aws
+---
+collections:
+- community.aws
