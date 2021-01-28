@@ -1,0 +1,5 @@
+cluster_dns_names:
+  local-cluster:
+    name: acm-app1-acm-app1.apps.openshift.rhcasalab.com
+  aws-ca:
+    name: acm-app1-acm-app1.apps.aws-ca.mouimetlab.com

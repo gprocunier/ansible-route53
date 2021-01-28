@@ -4,14 +4,29 @@
   gather_facts: no
 
   tasks:
-    - name: Create or update CNAME entry
+    - name: Initialize target_names
+      set_fact:
+        target_ips: []
+
+    - debug:
+        msg: "{{ lookup('community.general.dig', 'console-openshift-console.apps.openshift.rhcasalab.com') }}"    
+
+    - name: fill target_names
+      loop: "{{ target_clusters }}"
+      set_fact: 
+        target_ips: "{{ target_ips + [lookup('community.general.dig', cluster_dns_names[item].name)] }}"
+    
+    - debug:
+        var: target_ips
+
+    - name: Create or update A entry
       community.aws.route53:
         state: present
         zone: "{{ zone_name }}"
         record: "{{ global_name }}"
-        type: CNAME
-        ttl: 300
-        value: "{{ target_names }}"
+        type: A
+        ttl: 5
+        value: "{{ target_ips }}"
         wait: yes
         overwrite: yes
 
