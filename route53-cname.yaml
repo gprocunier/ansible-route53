@@ -9,7 +9,7 @@
         target_ips: []
 
     - debug:
-        msg: "{{ lookup('community.general.dig', 'console-openshift-console.apps.openshift.rhcasalab.com', '@8.8.8.8') }}"    
+        msg: "{{ lookup('dig', 'console-openshift-console.apps.openshift.rhcasalab.com', '@8.8.8.8') }}"    
 
     - name: fill target_names
       loop: "{{ target_clusters }}"
