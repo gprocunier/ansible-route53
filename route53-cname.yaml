@@ -8,13 +8,10 @@
       set_fact:
         target_ips: []
 
-    - debug:
-        msg: "{{ lookup('dig', 'console-openshift-console.apps.openshift.rhcasalab.com', '@8.8.8.8') }}"    
-
     - name: fill target_names
       loop: "{{ target_clusters }}"
       set_fact: 
-        target_ips: "{{ target_ips + [lookup('community.general.dig', cluster_dns_names[item].name)] }}"
+        target_ips: "{{ target_ips + [lookup('community.general.dig', cluster_dns_names[item].name, '@8.8.8.8')] }}"
     
     - debug:
         var: target_ips
