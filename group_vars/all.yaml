@@ -1,15 +1,15 @@
 cluster_dns_names:
   local-cluster:
-    name: acm-app1-acm-app1.apps.openshift.rhcasalab.com
+    name: whereami-whereami.apps.openshift.rhcasalab.com
   aws-ca:
-    name: acm-app1-acm-app1.apps.aws-ca.mouimetlab.com
+    name: whereami-whereami.apps.aws-ca.mouimetlab.com
   aws-east:
     name: console-openshift-console.apps.aws-east.mouimetlab.com
   azure-ca-central:
-    name: console-openshift-console.apps.azure-ca-central.azmouimetlab.com
+    name: whereami-whereami.apps.azure-ca.azmouimetlab.com
   azure-ca:
-    name: console-openshift-console.apps.azure-ca-central.azmouimetlab.com
+    name: whereami-whereami.apps.azure-ca.azmouimetlab.com
   azure-ca-east:
-    name: console-openshift-console.apps.azure-ca-central.azmouimetlab.com
+    name: whereami-whereami.apps.azure-ca-east.azmouimetlab.com
   gcp-ca:
     name: console-openshift-console.apps.gcp-ca.mouimet.com
