@@ -11,7 +11,7 @@
     - name: fill target_names
       loop: "{{ target_clusters }}"
       set_fact: 
-        target_ips: "{{ target_ips + lookup('community.general.dig', cluster_dns_names[item].name, '@8.8.8.8').split(',') }}"
+        target_ips: "{{ target_ips + lookup('community.general.dig', cluster_dns_names[item].name | default(cluster_dns_names['default'].name), '@8.8.8.8').split(',') }}"
     
     - debug:
         var: target_ips

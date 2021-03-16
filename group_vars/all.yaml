@@ -6,10 +6,16 @@ cluster_dns_names:
   aws-east:
     name: console-openshift-console.apps.aws-east.mouimetlab.com
   azure-ca-central:
-    name: whereami-whereami.apps.azure-ca.azmouimetlab.com
+    name: whereami-whereami.apps.azure-ca-central.azmouimetlab.com
   azure-ca:
     name: whereami-whereami.apps.azure-ca.azmouimetlab.com
   azure-ca-east:
     name: whereami-whereami.apps.azure-ca-east.azmouimetlab.com
   gcp-ca:
     name: console-openshift-console.apps.gcp-ca.mouimet.com
+  aws-ca-1:
+    name: whereami-whereami.apps.aws-ca-1.mouimetlab.com
+  aws-ca-2:
+    name: whereami-whereami.apps.aws-ca-2.mouimetlab.com
+  default:
+    name: whereami-whereami.apps.openshift.rhcasalab.com
